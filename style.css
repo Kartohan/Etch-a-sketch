@@ -23,12 +23,29 @@ body {
 .buttons {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 40px;
 }
 .colorPicker {
     border: none;
-    height: 50px;
-    width: 80px;
+    height: 70px;
+    width: 130px;
     background: none;
+}
+.colorPicker:hover {
+    box-shadow: 0px 0px 7px 0px #ff8989;
+}
+button {
+    width: 130px;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    transition: .25s;
+}
+button:hover {
+    box-shadow: 0px 0px 7px 0px #000000;
+}
+button:active {
+    box-shadow: inset 0px 0px 7px 0px #000000;
 }
 

@@ -56,4 +56,15 @@ function pen() {
 
 pen()
 
+function randomColor(){
+    let sqaure = document.querySelectorAll('.piece');
+        sqaure.forEach(sq => sq.addEventListener ('mouseover', () => {
+        sq.style.backgroundColor = `rgb(${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)})`}))
+    }
 
+function raindbow() {
+    let raindbow = document.querySelector('.raindbow')
+    raindbow.addEventListener('click', randomColor)
+}
+
+raindbow();

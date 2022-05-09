@@ -12,6 +12,7 @@ container.style.border = '15px solid gray';
 }
 
 createGrid();
+
 let color = function color(){
     let color = document.querySelector('.colorPicker');
     return color.value;
@@ -25,6 +26,7 @@ function draw(){
     ))
 }
 
+draw();
 
 function clear(){
     let clear = document.querySelector('.clear')
@@ -46,10 +48,10 @@ function erase() {
 }
 
 erase();
- // pen button didn't work
+
 function pen() {
     let pen = document.querySelector('.pen')
-    pen.addEventListener('click', draw())
+    pen.addEventListener('click', draw)
 }
 
 pen()

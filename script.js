@@ -1,24 +1,22 @@
-function createGrid(){
+function createGrid() {
+let span = document.querySelectorAll('.sizeText');
+let range = document.querySelector('.range');
 let container = document.querySelector('.container');
-let grid = 16; //prompt('What size of grid do you want?')
+let grid = range.value; //prompt('What size of grid do you want?')
 let size = 500/grid;
+span.forEach(span => (span.innerText = range.value))
+container.style.border = '15px solid gray';
 for (let i = 0; i < (grid*grid); i++) {
     let square = document.createElement('div');
     container.appendChild(square);
     square.classList = 'piece';
     square.style.flexBasis = `${size}px`;
 }
-container.style.border = '15px solid gray';
 }
 
 createGrid();
 
-let color = function color(){
-    let color = document.querySelector('.colorPicker');
-    return color.value;
-}
-
-function draw(){
+function draw() {
     let color = document.querySelector('.colorPicker');
     let square = document.querySelectorAll('.piece');
     square.forEach( sq => sq.addEventListener( 'mouseover', () =>
@@ -28,7 +26,7 @@ function draw(){
 
 draw();
 
-function clear(){
+function clear() {
     let clear = document.querySelector('.clear')
     clear.addEventListener('click', () => {
         let sqaure = document.querySelectorAll('.piece')
@@ -56,7 +54,7 @@ function pen() {
 
 pen()
 
-function randomColor(){
+function randomColor() {
     let sqaure = document.querySelectorAll('.piece');
         sqaure.forEach(sq => sq.addEventListener ('mouseover', () => {
         sq.style.backgroundColor = `rgb(${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)})`}))
@@ -68,3 +66,29 @@ function raindbow() {
 }
 
 raindbow();
+
+function changeGrid() {
+    let span = document.querySelectorAll('.sizeText');
+    let piece = document.querySelectorAll('.piece');
+    piece.forEach(sq => {
+        sq.remove()
+    })
+    let range = document.querySelector('.range');
+    let container = document.querySelector('.container');
+    let grid = range.value; //prompt('What size of grid do you want?')
+    let size = 500/grid;
+    span.forEach(span => (span.innerText = range.value))
+    for (let i = 0; i < (grid*grid); i++) {
+    let square = document.createElement('div');
+    container.appendChild(square);
+    square.classList = 'piece';
+    square.style.flexBasis = `${size}px`;
+}
+draw()
+}
+
+function range() {
+    let range = document.querySelector('.range');
+    range.addEventListener('change', changeGrid)
+}
+range()

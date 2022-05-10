@@ -7,15 +7,19 @@
     <title>Document</title>
 </head>
 <body>
+    <h1 class="title">Etch-a-Sketch</h1>
+    <div class="body">
     <div class="buttons">
         <input type="color" class="colorPicker">
         <button class="pen">Pen</button>
         <button class="clear">Clear</button>
         <button class="erase">Eraser</button>
-        <button class="raindbow">Raindbow Mode</button>
-        <!--<input type="range" min="1" max="60" value="16">-->
+        <button class="raindbow">Raindbow</button>
+        <input class="range" type="range" min="1" max="60" value="16" step="1">
+        <p>Grid Size <span class="sizeText"></span>x<span class="sizeText"></span></p>
 </div>
     <div class="container"></div>
+</div>
 </body>
 <script src="script.js"></script>
 </html>

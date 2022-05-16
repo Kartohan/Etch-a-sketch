@@ -23,7 +23,14 @@ function draw() {
     sq.style.backgroundColor = `${color.value}`
     ))
 }
-
+function drawtouch() {
+    let color = document.querySelector('.colorPicker');
+    let square = document.querySelectorAll('.piece');
+    square.forEach( sq => sq.addEventListener( 'touchmove', () =>
+    sq.style.backgroundColor = `${color.value}`
+    ))
+}
+drawtouch();
 draw();
 
 function clear() {

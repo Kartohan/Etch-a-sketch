@@ -30,6 +30,7 @@ function drawtouch() {
     sq.style.backgroundColor = `${color.value}`
     ))
 }
+
 drawtouch();
 draw();
 
